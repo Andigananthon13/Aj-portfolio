@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #818181;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#gallery {
+    width: 85%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#gallery h2 {
+    text-align: center;
+    margin: 0 auto 2.5em auto;
+}
+
+.projects {
+    display: flex;
+    flex-flow:row wrap;
+    gap: 3em 10px;
+    justify-content: space-evenly;
+}
+
+.project {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 43%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-image {
+    width: 100%;
+    height: 40%;
+}
+
+.project-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    margin-top: 0;
+}
+
+.project-info p, .project-info ul {
+    margin: 0 0 10px;
+}
+
+.project-info ul {
+    padding-left: 20px;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+/*sliideeerrrr*/
+
+#outputs{
+    height: 100vh;
+    position: relative;
+    margin: 0;
+  }
+  #outputs .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+  }
+  #outputs .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #outputs .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        to top, #717171 47%, transparent
+    );
+  }
+  #outputs .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 60%;
+    max-width: 590px;
+    z-index: 1;
+  }
+  
+  #outputs .list .item .content p {
+    color: rgb(212, 212, 212);
+  }
+  
+  #outputs .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+  }
+  #outputs .list .item .content h2{
+    font-size: 80px;
+    margin: 0;
+  }
+  #outputs .list .item.active{
+    opacity: 1;
+    z-index: 10;
+  }
+  @keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+  }
+  #outputs .list .item.active p:nth-child(1),
+  #outputs .list .item.active h2,
+  #outputs .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+  }
+  #outputs .list .item.active h2{
+    animation-delay: 1s;
+  }
+  #outputs .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+  }
+  .arrows{
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    z-index: 100;
+  }
+  .arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #6f6f6f;
+    transition: .5s;
+  }
+  .arrows button:hover{
+    background-color: #eee;
+    color: black;
+  }
+  .thumbnail{
+    position: absolute;
+    bottom: 0;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
+    padding-right: 20px;
+  }
+  .thumbnail::-webkit-scrollbar{
+    width: 0;
+  }
+  .thumbnail .item{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .thumbnail .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .thumbnail .item.active{
+    filter: brightness(1.5);
+  }
+  .thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+  }
+
+/*foooteerrrr*/
+
+footer p {
+    text-align: center;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    gap: 1rem;
+}
+
+#socials-container img {
+    height: 35px;
+    cursor: pointer;
+}
